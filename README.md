@@ -16,3 +16,6 @@ Halaman ini berisi detail dari kejadian dengan menampilkan judul, gambar (dengan
 
 5. Cari (Search) Kejadian  
 User cukup mengetikkan sebuah kata di inputan textfield dan otomatis akan langsung muncul kejadian berdasarkan judul kejadian. Hasil search cukup ditampilkan judul dan jika di klik maka akan menuju detail kejadian.
+
+# Teknologi
+Ionic, Angular.js, Javascript, MySQL
