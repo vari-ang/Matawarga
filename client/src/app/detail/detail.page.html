@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Detail Incident
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header class="ion-text-center">
+      <ion-card-title>
+        {{ incident.judul }}
+      </ion-card-title>
+      <ion-card-subtitle>
+        Dilaporkan oleh: {{ incident.username }} <br>
+        {{ incident.tanggal }} <br>
+        <em>Lokasi: {{ incident.latitude }} (Lat), {{ incident.longitude }} (Long)</em>
+      </ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content class="ion-text-center">
+      <ion-slides pager="true" [options]="slideOptions">
+        <ion-slide *ngFor="let img of incident.link_gambars">
+          <ion-img src="http://ubaya.prototipe.net/s160717023/matawarga/gambar_kejadian/{{ img }}"></ion-img>
+        </ion-slide>
+      </ion-slides>
+      <p>{{ incident.deskripsi }}</p>
+      <p>Tujuan Instansi: {{ incident.instansi_tujuan }}</p>
+    </ion-card-content>
+    <ion-card-content>
+      <p style="margin-top: -1em;"><strong>Komentar Warga:</strong></p>
+      <p *ngFor="let comment of incident.komens">
+        <em>{{ comment.username }}</em>: {{ comment.komentar }}
+      </p>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-button *ngIf="incident.liked"
+                  class="like-btn"
+                  (click)="giveLike(incident.idkejadian)">
+        <ion-icon name="thumbs-up"></ion-icon>&nbsp;({{ incident.jumlah_like }})
+      </ion-button>
+      <ion-button *ngIf="!incident.liked" color="light"
+                  class="like-btn"
+                  (click)="giveLike(incident.idkejadian)">
+        <ion-icon name="thumbs-up-outline"></ion-icon>&nbsp;({{ incident.jumlah_like }})
+      </ion-button>
+      <ion-button class="comment-btn" color="light">
+        <ion-icon name="chatbubbles"></ion-icon>&nbsp;({{ incident.jumlah_komen }})
+      </ion-button>
+    </ion-card-content>
+    <ion-card-content class="ion-margin-top">
+      <ion-item style="width: 100%;">
+        <ion-label position='floating'>Beri Komentar</ion-label>
+        <ion-textarea [(ngModel)]="comment" placeholder="Komentar Anda"></ion-textarea>
+      </ion-item>
+      <ion-button expand='block' class="ion-margin-top" 
+          (click)="giveComment(incident.idkejadian)">
+        Kirim Komentar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>   
+</ion-content>

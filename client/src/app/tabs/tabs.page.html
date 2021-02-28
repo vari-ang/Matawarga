@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button color="danger" (click)="logOut()">
+        Log Out
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Beranda</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="search">
+      <ion-icon name="search-outline"></ion-icon>
+      <ion-label>Pencarian</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="add">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-label>Penambahan</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

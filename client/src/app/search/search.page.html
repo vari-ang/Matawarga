@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Search
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-searchbar (ionInput)="getInput($event)" placeholder="Cari kejadian"></ion-searchbar>
+
+  <ion-list *ngIf="searchResults.length != 0">
+    <p class="ion-text-center">Hasil Pencarian:</p>
+    <ion-item *ngFor="let result of searchResults">
+      <ion-label>
+        <ion-router-link routerLink="/tabs/detail/{{ result.idkejadian }}">
+          {{ result.judul }}
+        </ion-router-link>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

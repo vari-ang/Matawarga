@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      MATA WARGA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <h4 class="ion-text-center">Form Signup</h4>
+
+    <p>Daftarkan akun agar Anda dapat melaporkan dan mendukung segala kejadian di sekitar Anda kepada pemerintah daerah atau pihak terkait</p>
+
+    <ion-item>
+      <ion-label position='floating'>Nama</ion-label>
+      <ion-input type="text" (input)="getName($event)"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position='floating'>Username</ion-label>
+      <ion-input type="text" (input)="getUsername($event)"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position='floating'>Password</ion-label>
+      <ion-input type="password" (input)="getPassword($event)"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position='floating'>Ulangi Password</ion-label>
+      <ion-input type="password" (input)="getRePassword($event)"></ion-input>
+    </ion-item>
+    
+    <ion-button expand='block' (click)="signUp()" class="ion-margin-top">
+      Sign Up
+    </ion-button>
+
+    <ion-text [color]="signup.color" class="ion-text-center">
+      <h4>{{ signup.message }}</h4>
+    </ion-text>
+
+    <p class="ion-text-center">
+      Sudah Punya Akun? 
+      <ion-router-link href="/login">Login Saja</ion-router-link>
+    </p>
+  </ion-card>
+</ion-content>

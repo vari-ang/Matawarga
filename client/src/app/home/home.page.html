@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h5>Selamat datang, {{ username }}!</h5>
+
+  <ion-card *ngFor="let incident of incidents; let ix = index">
+    <ion-card-header class="ion-text-center">
+      <ion-card-title>
+        <ion-router-link routerLink="/tabs/detail/{{ incident.idkejadian }}">{{ incident.judul }}</ion-router-link>
+      </ion-card-title>
+      <ion-card-subtitle>
+        Dilaporkan oleh: {{ incident.username }} <br>
+        {{ incident.tanggal }}
+      </ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content class="ion-text-center">
+      <ion-img src="http://ubaya.prototipe.net/s160717023/matawarga/gambar_kejadian/{{ incident.link_gambar }}"></ion-img>
+      
+      <p>{{ incident.deskripsi }}</p>
+      <p>Tujuan Instansi: {{ incident.instansi_tujuan }}</p>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-button *ngIf="incident.liked"
+                  class="like-btn"
+                  (click)="giveLike(incident.idkejadian, ix)">
+        <ion-icon name="thumbs-up"></ion-icon>&nbsp;({{ incident.jumlah_like }})
+      </ion-button>
+      <ion-button *ngIf="!incident.liked" color="light"
+                  class="like-btn"
+                  (click)="giveLike(incident.idkejadian, ix)">
+        <ion-icon name="thumbs-up-outline"></ion-icon>&nbsp;({{ incident.jumlah_like }})
+      </ion-button>
+      <ion-button class="comment-btn" color="light"
+          routerLink="/tabs/detail/{{ incident.idkejadian }}">
+        <ion-icon name="chatbubbles"></ion-icon>&nbsp;({{ incident.jumlah_komen }})
+      </ion-button>
+    </ion-card-content>
+  </ion-card>   
+</ion-content>

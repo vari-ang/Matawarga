@@ -1,0 +1,8 @@
+{
+  "name": "matawarga_client",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,12 @@
+ion-card {
+    ion-img {
+        max-width: 650px;
+        max-height: 650px;
+        margin: 0 auto;
+    }
+
+    p { margin-top: 1em; }
+
+    .like-btn { float: left; }
+    .comment-btn { float: right; }
+}

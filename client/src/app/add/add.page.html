@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Add
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h4 class="ion-text-center">Tambah Pelaporan Kejadian</h4>
+
+  <ion-item>
+    <ion-label position='floating'>Judul</ion-label>
+    <ion-input [(ngModel)]="incident.title" placeholder="Judul Pelaporan..."></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position='floating'>Deskripsi</ion-label>
+    <ion-textarea [(ngModel)]="incident.description" placeholder="Deskripsi Kejadian..."></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position='stacked'>Lokasi Kejadian (Lat, Long)</ion-label>
+    {{ incident.location.latitude }}, 
+    {{ incident.location.longitude }}
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position='stacked'>Gambar</ion-label>
+    <ion-input type="file" accept="image/*" multiple (change)="changeListener($event)"></ion-input>
+    <em><b>Note:</b> Ukuran (size) gambar harus < 200KB</em>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position='floating'>Tujuan Instansi</ion-label>
+    <ion-select [(ngModel)]="incident.institute" placeholder="-- Pilih Tujuan Instansi --">
+      <ion-select-option value="Pemkot">Pemkot</ion-select-option>
+      <ion-select-option value="PLN">PLN</ion-select-option>
+      <ion-select-option value="PDAM">PDAM</ion-select-option>
+      <ion-select-option value="Polisi">Polisi</ion-select-option>
+      <ion-select-option value="Lain-lain">Tidak Tahu</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position='floating'>Tanggal</ion-label> 
+    <ion-datetime display-timezone="utc" displayFormat="D MMM YYYY H:mm" [(ngModel)]="incident.datetime"></ion-datetime>
+  </ion-item>
+  
+  <ion-button expand='block' (click)="addProduct()">Tambah</ion-button> 
+</ion-content>
