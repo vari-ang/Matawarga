@@ -1,6 +1,6 @@
 # Matawarga
 
-Aplikasi mata warga adalah aplikasi yang digunakan masyarakat untuk melaporkan segala kejadian yang sekiranya perlu dilaporkan kepada pemerintah daerah atau pihak terkait. Pada aplikasi ini warga melaporkan dengan cara memfoto dan memberikan keterangan yg diperlukan, dan memilih checkbox ditujukan untuk siapa dgn pilihan Pemkot, PLN, PDAM, Polisi, Tidak tahu. Warga bisa memberikan komentar pada laporan warga lainnya. Selain komentar bisa juga diberikan Like jika mendukung atau setuju dengan laporan tersebut dan dislike bila tidak setuju atau tidak mendukung laporan tersebut. Daftar laporan dapat di filter berdasar tujuan dan tanggal laporan.
+Aplikasi yang digunakan masyarakat untuk melaporkan segala kejadian yang sekiranya perlu dilaporkan kepada pemerintah daerah atau pihak terkait. Pada aplikasi ini warga melaporkan dengan cara memfoto dan memberikan keterangan yg diperlukan, dan memilih checkbox ditujukan untuk siapa dgn pilihan Pemkot, PLN, PDAM, Polisi, Tidak tahu. Warga bisa memberikan komentar pada laporan warga lainnya. Selain komentar bisa juga diberikan Like jika mendukung atau setuju dengan laporan tersebut dan dislike bila tidak setuju atau tidak mendukung laporan tersebut. Daftar laporan dapat di filter berdasar tujuan dan tanggal laporan.
 
 # Fitur
 1. Login
@@ -18,4 +18,4 @@ Halaman ini berisi detail dari kejadian dengan menampilkan judul, gambar (dengan
 User cukup mengetikkan sebuah kata di inputan textfield dan otomatis akan langsung muncul kejadian berdasarkan judul kejadian. Hasil search cukup ditampilkan judul dan jika di klik maka akan menuju detail kejadian.
 
 # Teknologi
-Ionic, Angular.js, Javascript, MySQL
+Ionic, Angular.js, Javascript, PHP, dan MySQL
